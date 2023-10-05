@@ -32,13 +32,13 @@ async function authorize(){
  exports.getdata=async (req, res) => {
     try {
       
-      const fileId =process.env.fileId
+    //   const fileId =process.env.fileId
   
       
       const downloadPath = path.join(__dirname,'video.mp4');
   
       
-     // const fileMetadata = await drive.files.get({ fileId, fields: 'video/*'});
+     
   
  
       const response = fs.createWriteStream(downloadPath);
@@ -51,7 +51,7 @@ async function authorize(){
         { responseType: 'stream' }
       );
   
- //converting into writable string
+ //converting into writable stream
       data.pipe(response);
   
       
