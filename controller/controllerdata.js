@@ -35,7 +35,7 @@ async function authorize(){
     //   const fileId =process.env.fileId
   
       
-      const downloadPath = path.join(__dirname,'video.mp4');
+      const downloadPath = path.join(__dirname,`${new Date().getTime()}.mp4`);
   
       
      
@@ -69,10 +69,10 @@ async function authorize(){
       await drive.files.create({
         media:media,
         resource: {
-         
+         name:"",
           parents: [process.env.FOLDER_ID],
         },
-       
+       fields:'id'
       });
 
       res.status(200).send('Video downloaded and uploaded successfully.');
