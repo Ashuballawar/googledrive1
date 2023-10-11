@@ -92,7 +92,8 @@ async function authorize(){
       headers: {
         'Content-Type': 'video/mp4', 
         'Content-Length': endByte - startByte,
-        'Content-Range': range,
+        'Content-Range': range ,
+     
       },
     });
   
